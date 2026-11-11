@@ -1,22 +1,21 @@
 # PPTRunner Core (pptrunner-core)
 
 > **Video as Code for Presentations**  
-> AI 原生的声明式 PPT 视频编译引擎：将静态幻灯片转换为高保真、音画精准对齐的交互式视频。
 
 ---
 
-### 💡 核心设计理念
+### 💡 Core Design Philosophy
 
-传统的 AI 视频工具往往是不可解释、无法敏捷维护的黑盒。`PPTRunner Core` 采用类似于编译器的结构化处理管线：
+Traditional AI video tools often function as "black boxes"—opaque, uninterpretable, and difficult to maintain or adapt. `PPTRunner Core` utilizes a structured, compiler-like processing pipeline:
 
-1. **PPT 解析**：提取幻灯片的二维空间拓扑、视觉权重与上下文意图。
-2. **Markdown 脚本**：大模型智能重构口语化讲义台词与重音停顿标记。
-3. **YAML分镜头**：声明式定义镜头排期、局部放大/高亮目标及音画微观时间轴。
-4. **HTML/JS 动效**：基于现代 Web 标准组件（Remotion / SVG / CSS）驱动局部动态聚焦。
-5. **本地极速渲染**：通过 Headless Chrome 与 FFmpeg 在本地无状态容器中产出 MP4/WebM。
+1. **PPT Parsing**: Extracts the 2D spatial topology of slides, visual weighting, and contextual intent.
+2. **Markdown Scripting**: Leverages Large Language Models (LLMs) to intelligently reconstruct spoken-word scripts, complete with emphasis and pause markers.
+3. **YAML Storyboarding**: Declaratively defines shot sequencing, targeted zooms/highlights, and precise audio-visual timelines.
+4. **HTML/JS Animation**: Drives dynamic, localized focus using modern web standards (Remotion, SVG, and CSS).
+5. **High-Speed ​​Local Rendering**: Generates MP4/WebM files within a local, stateless container using Headless Chrome and FFmpeg.
 
-### 🔒 隐私与安全性保障 (Local-First & Zero-Data-Leak)
+### 🔒 Privacy and Security (Local-First & Zero-Data-Leak)
 
-* **本地闭环执行**：PPT 原件、解说脚本、分镜头配置文件及最终视频全程留在本地网络环境。
-* **BYOK 架构**：无缝对接企业内部自有的 LLM 与 TTS 端点（如 Azure OpenAI、AWS Bedrock 或本地部署的开源模型）。
-* **透明可审计**：纯代码开源，专为企业安全合规审查（情シス/CISO）设计。
+* **Local Closed-Loop Execution**: All source PPT files, scripts, storyboard configurations, and final videos remain entirely within your local network environment.
+* **BYOK (Bring Your Own Key/Model) Architecture**: Integrates seamlessly with your organization’s existing LLM and TTS endpoints (e.g., Azure OpenAI, AWS Bedrock, or locally deployed open-source models).
+* **Transparent and Auditable**: Fully open-source code, designed specifically to meet enterprise security and compliance standards (IT/CISO review).
